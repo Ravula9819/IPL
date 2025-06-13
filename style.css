@@ -1,0 +1,457 @@
+/* Reset and base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0b0b0b;
+  color: #eee;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1rem 3rem;
+}
+
+/* Scrollbar (dark) */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+body::-webkit-scrollbar-thumb {
+  background: #da1f2c;
+  border-radius: 10px;
+}
+
+/* Header */
+header {
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+  padding: 2.5rem 1rem;
+  background: linear-gradient(90deg, #1a0000, #4c0000);
+  border-bottom: 4px solid #da1f2c;
+  box-shadow: 0 5px 15px #da1f2caa;
+  border-radius: 0 0 15px 15px;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ff2e2e;
+  letter-spacing: 4px;
+  text-shadow: 0 0 10px #da1f2c;
+  user-select: none;
+}
+
+header p {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ff7777cc;
+  margin-top: 0.5rem;
+  font-style: italic;
+  user-select: none;
+}
+
+/* Common container */
+section {
+  width: 100%;
+  max-width: 1100px;
+  background: #111;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 0 20px #da1f2caa;
+  transition: box-shadow 0.3s ease;
+}
+
+section:hover {
+  box-shadow: 0 0 35px #ff3333cc;
+}
+
+/* Section headings */
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+  color: #ff3b3b;
+  text-shadow: 0 0 6px #da1f2c;
+  border-bottom: 2px solid #ff3b3b;
+  padding-bottom: 0.4rem;
+}
+
+/* Victory Image */
+.victory img {
+  display: block;
+  max-width: 90%;
+  height: auto;
+  border-radius: 15px;
+  margin: 0 auto 1rem;
+  box-shadow: 0 0 25px #da1f2caa;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.victory img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #ff2a2a;
+}
+
+.victory .caption {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #ff4444;
+  text-shadow: 0 0 10px #da1f2c;
+  user-select: none;
+}
+
+/* Players Grid */
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
+  gap: 1.8rem;
+  justify-items: center;
+}
+
+.card {
+  background: #1c1c1c;
+  border: 2px solid #da1f2c;
+  border-radius: 15px;
+  padding: 1rem;
+  width: 240px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 6px 20px #da1f2c80;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 35px #ff3b3bcc;
+}
+
+.card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.9rem;
+  box-shadow: 0 0 15px #da1f2caa;
+  transition: box-shadow 0.3s ease;
+}
+
+.card img:hover {
+  box-shadow: 0 0 30px #ff2a2a;
+}
+
+.card h3 {
+  margin-bottom: 0.6rem;
+  color: #ff4d4d;
+  font-weight: 800;
+  text-shadow: 0 0 5px #da1f2c;
+}
+
+.card p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e0e0e0cc;
+  line-height: 1.4;
+  white-space: pre-line;
+}
+
+/* Stats Table */
+.stats-table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #1b1b1b;
+  box-shadow: 0 8px 30px #da1f2c99;
+  font-weight: 600;
+  color: #fff;
+  font-size: 1rem;
+  cursor: default;
+}
+
+.stats-table thead tr {
+  background: linear-gradient(90deg, #da1f2c, #a01015);
+  box-shadow: 0 4px 12px #da1f2cbb;
+}
+
+.stats-table thead th {
+  padding: 1.2rem 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  border-right: 1px solid rgba(255,255,255,0.2);
+  user-select: none;
+}
+
+.stats-table thead th:last-child {
+  border-right: none;
+}
+
+.stats-table tbody tr {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: background-color 0.3s ease;
+}
+
+.stats-table tbody tr:nth-child(even) {
+  background: rgba(218,31,44,0.1);
+}
+
+.stats-table tbody tr:hover {
+  background: rgba(218,31,44,0.35);
+}
+
+.stats-table tbody td {
+  padding: 1.1rem 1.6rem;
+  border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.stats-table tbody td:last-child {
+  border-right: none;
+}
+
+/* Stats & Slogans Lists - Styled Pills */
+.stats ul,
+.slogans ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  justify-content: center;
+  padding-left: 0;
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.stats ul li,
+.slogans ul li {
+  background: linear-gradient(145deg, #da1f2c, #a00f12);
+  padding: 0.75rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #fff;
+  box-shadow: 0 4px 15px #da1f2cbb;
+  cursor: default;
+  transition: background 0.3s ease;
+  user-select: none;
+}
+
+.stats ul li:hover,
+.slogans ul li:hover {
+  background: linear-gradient(145deg, #ff4444, #cc1010);
+  box-shadow: 0 6px 22px #ff4444cc;
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+  padding: 1rem 1rem 2rem;
+  color: #bb2222cc;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-top: 2px solid #da1f2c;
+  user-select: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+  
+  section {
+    padding: 1.5rem 1.5rem;
+  }
+  
+  .card {
+    width: 100%;
+  }
+  
+  .stats-table thead th,
+  .stats-table tbody td {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .stats ul,
+  .slogans ul {
+    gap: 1rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.7rem;
+  }
+  
+  section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .players-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats ul,
+  .slogans ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+.historical-records {
+  padding: 2rem;
+  max-width: 1100px;
+  margin: 3rem auto;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  border: 2px solid #da1f2c;
+  box-shadow: 0 0 15px #da1f2c88;
+  color: white;
+  text-align: center;
+}
+
+.historical-records h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #ff4444;
+}
+
+.records-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+  justify-content: center;
+}
+
+.record-card {
+  background: rgba(218, 31, 44, 0.8);
+  border-radius: 10px;
+  padding: 1.4rem 1.8rem;
+  width: 250px;
+  box-shadow: 0 0 10px #a10000cc;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.record-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px #ff2222cc;
+}
+
+.record-card h3 {
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  color: #fff0f0;
+}
+
+.record-card p {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+.fan-art-stories {
+  padding: 2rem;
+  max-width: 1100px;
+  margin: 3rem auto;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 2px solid #da1f2c;
+  box-shadow: 0 0 15px #da1f2c88;
+  color: white;
+}
+
+.fan-art-stories h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 1.5rem;
+  color: #ff4444;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px #800000cc;
+}
+
+.fan-art-gallery,
+.fan-stories {
+  margin-top: 2rem;
+}
+
+.fan-art-gallery h3,
+.fan-stories h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #da1f2c;
+  padding-bottom: 0.3rem;
+  color: #ff6666;
+}
+
+.art-grid {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.art-grid img {
+  width: 280px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #da1f2c;
+  box-shadow: 0 0 12px #da1f2caa;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.art-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff2a2a;
+}
+
+.fan-story {
+  background: rgba(218, 31, 44, 0.8);
+  border-radius: 12px;
+  padding: 1.4rem 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 15px #a10000cc;
+  transition: box-shadow 0.3s ease;
+}
+
+.fan-story:hover {
+  box-shadow: 0 0 25px #ff4444cc;
+}
+
+.fan-story h4 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #fff0f0;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.fan-story p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #ffeeee;
+}
+.players-section h3 {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+  color: #ff3b3b;
+  text-shadow: 0 0 6px #da1f2c;
+  border-bottom: 2px solid #ff3b3b;
+  padding-top: 0.4em;
+}
